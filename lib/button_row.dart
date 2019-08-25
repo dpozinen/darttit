@@ -11,12 +11,10 @@ class ButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     Color color = Theme.of(context).buttonColor;
 
-    return LayoutBuilder(builder: (context, constraints) {
-      if (labels.isEmpty)
-        return createRow(noTextIcons(color));
-      else
-        return createRow(textIcons(color));
-    });
+    if (labels.isEmpty)
+      return createRow(noTextIcons(color));
+    else
+      return createRow(textIcons(color));
   }
 
   List noTextIcons(Color color) {
